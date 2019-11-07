@@ -20,5 +20,13 @@ const User = db.define('users', {
     }
 
 });
-
+/* 
+User.sync({ force: true });
+User.create({
+    firstName: "José",
+    lastName: "Silva",
+    age: '18',
+    email: 'ze@meuemail.com'
+});
+*/
 module.exports = User;

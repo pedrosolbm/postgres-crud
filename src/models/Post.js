@@ -9,5 +9,11 @@ const Post = db.define('posts', {
         type: Sequelize.TEXT
     }
 });
-
+/* 
+Post.sync({ force: true });
+Post.create({
+    title: "nodeJS",
+    content: "Teste criação do node"
+});
+*/
 module.exports = Post;
