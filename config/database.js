@@ -1,4 +1,3 @@
-
 const Sequelize = require('sequelize');
 
 //Criando a conexão com o banco de dados de acordo com a configuração do config.json

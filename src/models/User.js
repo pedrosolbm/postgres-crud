@@ -18,7 +18,6 @@ const User = db.define('users', {
         type: Sequelize.STRING,
         required: true,
     }
-
 });
 /* 
 User.sync({ force: true });
