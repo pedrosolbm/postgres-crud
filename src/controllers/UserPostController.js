@@ -15,12 +15,12 @@ module.exports = {
     },
     async update(req, res) {
         const user_post = await UserPost.findByPk(req.params.id);
-        await user.update(req.body);
+        await user_post.update(req.body);
         return res.json(user_post);
     },
     async destroy(req, res) {
         const user_post = await UserPost.findByPk(req.params.id);
-        await user.destroy();
-        return res.send();
+        await user_post.destroy();
+        return res.send(console.log('Apagado'));
     }
 };

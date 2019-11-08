@@ -8,7 +8,7 @@ const requireDir = require('require-dir');
 const routes = require('./src/routes');
 
 //Arquivo do banco
-const db = require('./config/database');
+const db = require('./src/models/database');
 
 //Teste de Conexao 
 db.authenticate()
