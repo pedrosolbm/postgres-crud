@@ -10,7 +10,7 @@ module.exports = {
         return res.json(user_post)
     },
     async create(req, res) {
-        const user_post = await UserPost.create(req.body);
+        const user_post = await UserPost.create(req.body)
         return res.json(user_post);
     },
     async update(req, res) {
@@ -20,7 +20,7 @@ module.exports = {
     },
     async destroy(req, res) {
         const user_post = await UserPost.findByPk(req.params.id);
-        await user_post.destroy();
-        return res.send(console.log('Apagado'));
+        await user_post.destroy()
+        return res.send();
     }
 };
