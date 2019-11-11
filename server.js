@@ -1,9 +1,8 @@
 //Importar os módulos utilizando o require
 const express = require('express');
-const Sequelize = require('sequelize');
 const bodyParser = require('body-parser');
-const requireDir = require('require-dir');
-
+const User = require('./src/models/User')
+const Post = require('./src/models/Post')
 //Routes
 const routes = require('./src/routes');
 
@@ -12,8 +11,15 @@ const db = require('./src/models/database');
 
 //Teste de Conexao 
 db.authenticate()
-    .then(()=> console.log("Conectado ao banco..."))
-    .catch(err => console.log("Error: ",err));
+    .then(() => console.log("Conectado ao banco..."))
+    .catch(err => console.log("Error: ", err));
+
+
+//Cria as tabelas
+
+/* User.sync({ force: true });
+Post.sync({ force: true }); */
+
 
 //Iniciando o App
 const app = express();
@@ -25,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //Rotas
 app.use('/list', require('./src/routes'));
-app.get('/', (req, res)=>{res.send("INDEX!");});
+app.get('/', (req, res) => { res.send("INDEX!"); });
 
 const PORT = process.env.PORT || 3001;
 

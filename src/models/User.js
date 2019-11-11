@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('./database');
-
+const Post = require('./Post')
 const User = db.define('users', {
     firstName: {
         type: Sequelize.STRING,
@@ -17,15 +17,16 @@ const User = db.define('users', {
     email: {
         type: Sequelize.STRING,
         required: true,
-    }
+    },
 });
-/* 
-User.sync({ force: true });
-User.create({
+
+/* User.create({
     firstName: "José",
     lastName: "Silva",
     age: '18',
     email: 'ze@meuemail.com'
-});
-*/
+}); */
+User.hasMany(Post);
+Post.belongsTo(User);
+
 module.exports = User;
