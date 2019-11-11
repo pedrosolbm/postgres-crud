@@ -2,10 +2,10 @@ const Sequelize = require('sequelize');
 const User = require('../models/User');
 module.exports = {
     async index(req, res) {
-        const user = await User.findAll({ include: [{ all: true }] });
+        const user = await User.findAll();
         return res.json(user);
     },
-    async all(req, res) {
+    async posts(req, res) {
         const user = await User.findAll({ include: [{ all: true }] });
         return res.json(user);
     },

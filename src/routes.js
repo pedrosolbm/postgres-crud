@@ -8,7 +8,7 @@ router.get('/list', (req, res) => { return res.send("/list LISTAAAAA"); });
 
 router.get('/list/users', UserController.index);
 router.get('/list/posts', PostController.index);
-router.get('/list/user_posts', UserController.all);
+router.get('/list/user_posts', UserController.posts);
 
 router.get('/list/users/:id', UserController.search);
 router.get('/list/posts/:id', PostController.search);
